@@ -8,6 +8,7 @@
         <description>Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 Targets Universal Windows 10 apps (UWP). See 'ANGLE.WindowsStore' for non-ARM64 apps.</description>
         <projectUrl>http://github.com/microsoft/angle/wiki</projectUrl>
+        <repository type="git" url="https://github.com/servo/ms-angle.git" branch="appcontainer2" />
         <license type="file">LICENSE</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <copyright>Copyright (C) 2002-2013 The ANGLE Project Authors. Portions Copyright (C) Microsoft Corporation.</copyright>
@@ -16,39 +17,23 @@ Targets Universal Windows 10 apps (UWP). See 'ANGLE.WindowsStore' for non-ARM64 
 
     <files>
       <!-- UAP -->
-      <file src="..\out\Release-x64\libEGL.dll" target="bin\UAP\x64" />
-      <file src="..\out\Release-x64\libEGL.dll.pdb" target="bin\UAP\x64\libEGL.pdb" />
-      <file src="..\out\Release-x64\libGLESv2.dll" target="bin\UAP\x64" />
-      <file src="..\out\Release-x64\libGLESv2.dll.pdb" target="bin\UAP\x64\libGLESv2.pdb" />
-      <file src="..\out\Release-x64\libEGL.dll.lib" target="bin\UAP\x64\libEGL.lib" />
-      <file src="..\out\Release-x64\libGLESv2.dll.lib" target="bin\UAP\x64\libGLESv2.lib" />
+      <file src="..\out\$configuration$-x64\libEGL.dll" target="bin\UAP\x64" />
+      <file src="..\out\$configuration$-x64\libGLESv2.dll" target="bin\UAP\x64" />
+      <file src="..\out\$configuration$-x64\libEGL.dll.lib" target="bin\UAP\x64\libEGL.lib" />
+      <file src="..\out\$configuration$-x64\libGLESv2.dll.lib" target="bin\UAP\x64\libGLESv2.lib" />
+      <file src="..\out\$configuration$-x64\libEGL.dll.pdb" target="bin\UAP\x64\libEGL.dll.pdb" />
+      <file src="..\out\$configuration$-x64\libGLESv2.dll.pdb" target="bin\UAP\x64\libGLESv2.dll.pdb" />
 
-      <file src="..\out\Release-arm64\libEGL.dll" target="bin\UAP\ARM64" />
-      <file src="..\out\Release-arm64\libEGL.dll.pdb" target="bin\UAP\ARM64\libEGL.pdb" />
-      <file src="..\out\Release-arm64\libGLESv2.dll" target="bin\UAP\ARM64" />
-      <file src="..\out\Release-arm64\libGLESv2.dll.pdb" target="bin\UAP\ARM64\libGLESv2.pdb" />
-      <file src="..\out\Release-arm64\libEGL.dll.lib" target="bin\UAP\ARM64\libEGL.lib" />
-      <file src="..\out\Release-arm64\libGLESv2.dll.lib" target="bin\UAP\ARM64\libGLESv2.lib" />
+      <file src="..\out\$configuration$-arm64\libEGL.dll" target="bin\UAP\ARM64" />
+      <file src="..\out\$configuration$-arm64\libGLESv2.dll" target="bin\UAP\ARM64" />
+      <file src="..\out\$configuration$-arm64\libEGL.dll.lib" target="bin\UAP\ARM64\libEGL.lib" />
+      <file src="..\out\$configuration$-arm64\libGLESv2.dll.lib" target="bin\UAP\ARM64\libGLESv2.lib" />
+      <file src="..\out\$configuration$-arm64\libEGL.dll.pdb" target="bin\UAP\ARM64\libEGL.dll.pdb" />
+      <file src="..\out\$configuration$-arm64\libGLESv2.dll.pdb" target="bin\UAP\ARM64\libGLESv2.dll.pdb" />
 
       <!-- Headers -->
-      <file src="..\include\GLES2\gl2.h" target="include\GLES2" />
-      <file src="..\include\GLES2\gl2ext.h" target="include\GLES2" />
-      <file src="..\include\GLES2\gl2ext_angle.h" target="include\GLES2" />
-      <file src="..\include\GLES2\gl2ext_explicit_context_autogen.inc" target="include\GLES2" />
-      <file src="..\include\GLES2\gl2platform.h" target="include\GLES2" />
-      <file src="..\include\GLES3\gl3.h" target="include\GLES3" />
-      <file src="..\include\GLES3\gl3ext_explicit_context_autogen.inc" target="include\GLES3" />
-      <file src="..\include\GLES3\gl3platform.h" target="include\GLES3" />
-      <file src="..\include\GLES3\gl31.h" target="include\GLES3" />
-      <file src="..\include\GLES3\gl31ext_explicit_context_autogen.inc" target="include\GLES3" />
-      <file src="..\include\GLES3\gl32.h" target="include\GLES3" />
-      <file src="..\include\GLES3\gl32ext_explicit_context_autogen.inc" target="include\GLES3" />
-      <file src="..\include\EGL\egl.h" target="include\EGL" />
-      <file src="..\include\EGL\eglext.h" target="include\EGL" />
-      <file src="..\include\EGL\eglext_angle.h" target="include\EGL" />
-      <file src="..\include\EGL\eglplatform.h" target="include\EGL" />
-      <file src="..\include\KHR\khrplatform.h" target="include\KHR" />
-      <file src="..\include\angle_windowsstore.h" target="include" />
+      <file src="..\include\**\*.h" target="include" />
+      <file src="..\include\**\*.inc" target="include" />
 
       <!-- Build scripts -->
       <file src="ANGLE.WindowsStore.Servo.targets" target="build\native" />
