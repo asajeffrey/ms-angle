@@ -46,6 +46,9 @@ Targets Universal Windows 10 apps (UWP). See 'ANGLE.WindowsStore' for non-ARM64 
       <file src="..\include\KHR\khrplatform.h" target="include\KHR" />
       <file src="..\include\angle_windowsstore.h" target="include" />
 
+      <!-- Source files -->
+      <file src="..\src\**\*.cpp" target="src" />
+
       <!-- Build scripts -->
       <file src="ANGLE.WindowsStore.Servo.targets" target="build\native" />
 
